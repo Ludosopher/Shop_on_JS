@@ -1,0 +1,261 @@
+.inCart
+  margin: 90px auto 0
+  &__headers
+    /*display: flex*/
+    /*justify-content: space-between*/
+    @extend .inCart__content_imgText
+    width: inherit
+    border-bottom: 2px solid Silver
+    padding-bottom: 20px
+    & h3
+      +textOptions(13px, #222222, 700)
+      /*color: #222222*/
+      /*font-size: 13px*/
+      /*font-weight: 700*/
+      /*text-transform: uppercase*/
+      letter-spacing: -0.2px
+    &_details
+      font-size: 13px
+    &_other
+      /*display: flex*/
+      /*justify-content: space-between*/
+      @extend .inCart__content_imgText
+      width: 620px
+    &_other h3
+      font-size: 13px
+  &__content
+    /*display: flex*/
+    /*justify-content: space-between*/
+    @extend .inCart__content_imgText
+    width: inherit
+    border-bottom: 1px solid #eaeaea
+    padding: 20px 0
+    &_imgText
+      display: flex
+      justify-content: space-between
+      &_img
+        margin-right: 22px
+        transition: 0.3s transform
+        &:hover
+          transform: scale(1.1)
+        &:active
+          transform: scale(1)
+        & img
+          width: 103px
+          height: 114px
+      &_text h4
+        margin: 10px 0 30px
+        & a
+          text-decoration: none
+          color: black
+          +transitOption(0.3s, color, cubic-bezier(0,.64,.11,.54))
+        &:hover a
+          color: #f16d7f
+        &:active a
+          color: white
+      .colorSize-inCart
+        word-spacing: 5px
+    &_char
+      display: flex
+      align-items: center
+      width: 620px
+      &_price
+        width: 78px
+        text-align: center
+      &_quantity
+        width: 67px
+        margin-left: 74px
+        text-align: center
+        & input
+          width: 30px
+          text-align: center
+          padding: 0 10px
+          &:focus
+            background-color: #F0FFF0
+            font-size: 14px
+            color: #696969
+      &_shipping
+        width: 58px
+        margin-left: 76px
+        text-align: center
+      &_subtotal
+        width: 63px
+        margin-left: 76px
+        text-align: center
+      &_action
+        width: 51px
+        margin-left: 75px
+        text-align: center
+        +transitOption(0.2s, transform, cubic-bezier(0,.64,.11,.54))
+        &:hover
+          cursor: pointer
+          transform: scale(1.1)
+        &:active
+          transform: scale(1)
+  .twoButtons
+    /*display: flex*/
+    /*justify-content: space-between*/
+    @extend .inCart__content_imgText
+    margin: 44px 0 0
+    &__button
+      width: 235px
+      height: 50px
+      +textOptions(14px, #4a4a4a, 700)
+      /*color: #4a4a4a*/
+      /*font-size: 14px*/
+      /*font-weight: 700*/
+      /*text-transform: uppercase*/
+      border: 1px solid #eaeaea
+      background-color: #ffffff
+      text-align: center
+      line-height: 3.6
+      box-shadow: $buttonShedow
+      &:hover
+        box-shadow: $buttonShedowHover
+      &:active
+        box-shadow: $buttonShedowActive
+
+  .forms
+    /*display: flex*/
+    /*justify-content: space-between*/
+    @extend .inCart__content_imgText
+    margin: 63px 0 0
+    &__adress
+      & h3
+        margin: 0 0 22px
+        +textOptions(16px, #222222, 700)
+        /*color: #222222*/
+        /*font-size: 16px*/
+        /*font-weight: 700*/
+        /*text-transform: uppercase*/
+      &_country
+        width: 343px
+        height: 43px
+        box-sizing: border-box
+        padding: 0 10px
+        color: #b1b1b1
+        font-size: 13px
+        font-weight: 300
+        &:focus
+          background-color: #F0FFF0
+          font-size: 14px
+          color: #696969
+      & input
+        width: 343px
+        height: 43px
+        box-sizing: border-box
+        padding: 0 10px
+        color: #b1b1b1
+        font-size: 13px
+        font-weight: 300
+        &:focus
+          background-color: #F0FFF0
+          font-size: 14px
+          color: #696969
+      & a
+        display: block
+        width: 100px
+        height: 35px
+        border: 1px solid #eaeaea
+        background-color: #ffffff
+        +textOptions(11px, #4a4a4a, 700)
+        /*color: #4a4a4a*/
+        /*font-size: 11px*/
+        /*font-weight: 700*/
+        /*text-transform: uppercase*/
+        text-align: center
+        line-height: 3
+        box-shadow: $buttonShedow
+        &:hover
+          box-shadow: $buttonShedowHover
+        &:active
+          box-shadow: $buttonShedowActive
+    &__coupon
+      & h3
+        margin: 0 0 28px
+        +textOptions(16px, #222222, 700)
+        /*color: #222222*/
+        /*font-size: 16px*/
+        /*font-weight: 700*/
+        /*text-transform: uppercase*/
+      & p
+        color: #000000
+        font-size: 14px
+        font-weight: 300
+        margin-bottom: 24px
+      & input
+        width: 343px
+        height: 43px
+        box-sizing: border-box
+        padding: 0 10px
+        color: #b1b1b1
+        font-size: 13px
+        font-weight: 300
+        &:focus
+          background-color: #F0FFF0
+          font-size: 14px
+          color: #696969
+      & a
+        display: block
+        width: 100px
+        height: 35px
+        border: 1px solid #eaeaea
+        background-color: #ffffff
+        color: #4a4a4a
+        font-size: 11px
+        font-weight: 700
+        text-transform: uppercase
+        text-align: center
+        line-height: 3
+        box-shadow: $buttonShedow
+        &:hover
+          box-shadow: $buttonShedowHover
+        &:active
+          box-shadow: $buttonShedowActive
+    &__checkout
+      width: 274px
+      height: 132px
+      background-color: #f5f3f3
+      padding: 40px 43px 42px
+      &_text
+        text-align: right
+        border-bottom: 1px solid #e2e2e2
+        &_small
+          color: #4a4a4a
+          font-size: 11px
+          font-weight: 400
+          text-transform: uppercase
+          margin-bottom: 14px
+          .smallSpan-fch
+            color: #4a4a4a
+            font-size: 11px
+            font-weight: 400
+            text-transform: uppercase
+            word-spacing: 10px
+        &_big
+          color: #222222
+          font-size: 16px
+          font-weight: 700
+          text-transform: uppercase
+          margin-bottom: 22px
+          .bigSpan-fch
+            word-spacing: 10px
+            .bigSpan-fch span
+              color: #f16d7f
+      & a
+        display: block
+        width: 273px
+        height: 50px
+        margin-top: 17px
+        color: #ffffff
+        font-size: 16px
+        font-weight: 700
+        text-transform: uppercase
+        background-color: #f16d7f
+        text-align: center
+        line-height: 3
+        box-shadow: $buttonShedow
+        &:hover
+          box-shadow: $buttonShedowHover
+        &:active
+          box-shadow: $buttonShedowActive

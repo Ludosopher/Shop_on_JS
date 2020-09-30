@@ -1,0 +1,50 @@
+{
+    "amount": 46600,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 2,
+            "id_product": 3,
+            "product_name": "Bologna jacket S&F",
+            "img": "img/Card-3.0.jpg",
+            "collection": "man",
+            "description": "Jacket is a loose-fitting jacket, often of large size. Some models are assembled with an elastic band at the bottom and on the sleeves, the sleeves themselves are massive. Fastens with a zipper. Length, sometimes shortened. Some men replace traditional down jackets with bombers, this is fashionable, besides bombers keep heat well. This season, they are presented in almost any color.",
+            "material": "polyester",
+            "designer": "Nordman",
+            "price": 200
+        },
+        {
+            "quantity": 2,
+            "id_product": 4,
+            "product_name": "Blouse multicolored S&F",
+            "img": "img/Card-3.jpg",
+            "collection": "woman",
+            "description": "This blouse is made of a very comfortable material that is almost not wrinkled and well erased. Pay attention also to the charming ruched front of the product, comfortable 3/4 sleeve, elegant polyester inserts. Thanks to the extensive size range, this model can be worn by both a schoolgirl and an adult woman.",
+            "material": "polyester",
+            "designer": "Nordman",
+            "price": 25
+        },
+        {
+            "quantity": 1,
+            "id_product": 5,
+            "product_name": "Blouse striped  S&F",
+            "img": "img/Card-4.jpg",
+            "collection": "woman",
+            "description": "When the sun is warming on the street, you immediately want to put on something light and cozy to escape from the heat. It is for such cases that the option presented here will be ideal for you! This beige flared dress with chaotic black lettering will truly be your favorite summer thing. In it, you will be pleased with both the polyester fabric structure and the original style, the back line of which is longer than the front.",
+            "material": "polyester",
+            "designer": "HoangYen",
+            "price": 22
+        },
+        {
+            "quantity": 1,
+            "id_product": 6,
+            "product_name": "Suit D&L",
+            "img": "img/Card-5.jpg",
+            "collection": "man",
+            "description": "Classic two - piece suit \"Monarch\" silhouette REGULAR FIT. Consists of a suit jacket and trousers. The model is made of mixed fabric, with a classic costume small pattern. The color of the suit is dark blue. Pants, straight-leg silhouette. A suit jacket with a semi-adjacent silhouette, with lapels, flap pockets and a leaf pocket. This model is a great everyday option for a business dress code. The set can be supplemented with a shirt of dark and light colors.",
+            "material": "wool",
+            "designer": "Logony",
+            "price": 150
+        }
+    ]
+}

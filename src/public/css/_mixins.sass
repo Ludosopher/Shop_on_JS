@@ -1,0 +1,14 @@
+=textOptions($fontSize, $color, $fontWeight)
+  font-size: $fontSize
+  color: $color
+  font-weight: $fontWeight
+  text-transform: uppercase
+
+=flexBetween($fleks, $spBetween)
+  display: $fleks
+  justify-content: $spBetween
+
+=transitOption($time, $manual, $cubBez)
+  transition: $manual $time
+  transition-timing-function: cubic-bezier($cubBez)
+  /*+transitOption(0.3s, transform, cubic-bezier(0,.64,.11,.54))*/

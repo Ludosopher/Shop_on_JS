@@ -1,0 +1,152 @@
+.clearFix:after
+  content: ""
+  display: table
+  clear: both
+
+.checkout
+  margin-top: 89px
+  margin-bottom: 93px
+
+.chapter label
+  display: block
+  height: 74px
+  border-top: 1px solid #e8e8e8
+  line-height: 4.8
+  +textOptions(16px, #222222, 700)
+  cursor: pointer
+
+.chapter label:hover
+  color: #f16d7f
+
+.chapter label:active
+  color: #9f9f9f
+
+.chapter__card
+  width: 939px
+  margin: 0 0 79px
+  padding-left: 35px
+  padding-right: 166px
+  line-height: 1
+  display: none
+
+.hide
+  display: none
+
+.hide:checked + label
+  color: #f16d7f
+
+.hide:checked + label + .chapter__card
+  display: block
+  color: red
+
+.chapter:last-child
+  border-bottom: 1px solid #e8e8e8
+
+.cardCheck_left
+  float: left
+  & h3
+    +textOptions(13px, #222222, 400)
+    margin-bottom: 10px
+  & p
+    color: #b3b2b2
+    font-size: 13px
+    font-weight: 400
+    text-transform: none
+    line-height: 2
+  & a
+    display: block
+    margin-top: 35px
+    width: 180px
+    height: 50px
+    border: 1px solid #eaeaea
+    background-color: #ffffff
+    +textOptions(14px, #4a4a4a, 700)
+    text-align: center
+    line-height: 3.7
+    +transitOption(0.3s, all, cubic-bezier(0,.64,.11,.54))
+  .leftCheck__form
+    margin: 34px 0
+    line-height: 1.5
+    .leftCheck__radio
+      display: flex
+      align-items: center
+    .leftCheck__radio input
+      margin-right: 10px
+  .penaltimate
+    margin: 35px 0 30px
+
+.leftCheck__radio label
+  display: inline
+  border-top: none
+  line-height: 1.6
+  font-size: 12px
+  color: #222222
+  font-weight: 400
+  cursor: pointer
+
+.cardCheck_left a:hover
+  background: #f16d7f
+  color: white
+
+.cardCheck_left a:active
+  background: white
+  color: #A9A9A9
+
+.cardCheck_right
+  float: right
+  & h3
+    +textOptions(13px, #222222, 400)
+    margin-bottom: 10px
+    & span
+      color: red
+      font-size: 13px
+  .afterH3-Check
+    color: #b3b2b2
+    font-size: 13px
+    font-weight: 400
+    text-transform: none
+    line-height: 2
+    margin-bottom: 40px
+  .afterInput-Check
+    color: #ff0d0d
+    font-size: 13px
+    font-weight: 400
+  & a
+    display: inline-block
+    margin-top: 60px
+    width: 180px
+    height: 50px
+    border: 1px solid #eaeaea
+    background-color: #ffffff
+    +textOptions(14px, #4a4a4a, 700)
+    text-align: center
+    line-height: 3.5
+    +transitOption(0.3s, all, cubic-bezier(0,.64,.11,.54))
+  .fagotPass
+    color: #222222
+    font-size: 14px
+    font-weight: 400
+    margin-left: 32px
+  & input
+    width: 380px
+    height: 47px
+    box-sizing: border-box
+    padding: 0 10px
+    margin-bottom: 22px
+    &:focus
+      background-color: #F0FFF0
+      font-size: 14px
+      color: #696969
+
+.cardCheck_right a:hover
+  background: #f16d7f
+  color: white
+
+.cardCheck_right a:active
+  background: white
+  color: #A9A9A9
+
+
+
+
+

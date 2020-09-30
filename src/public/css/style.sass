@@ -1,0 +1,1373 @@
+@import "variables"
+@import "mixins"
+
+
+*
+  margin: 0
+  padding: 0
+
+body 
+  font-family: 'Lato', sans-serif
+
+#wrapper
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+
+.top
+  flex-grow: 1
+
+.container 
+  width: 1140px
+  margin: 0 auto
+
+a
+  text-decoration: none
+
+input, select
+  outline: none
+  border: 1px solid #C0C0C0
+
+/*ШАПКА*/
+.header 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.17)
+  border: 1px solid #ececec
+  background-color: #ffffff
+
+
+.header-flex 
+  height: 100px
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+
+.header__left,
+.header__form,
+.logo 
+  display: flex
+  align-items: center
+
+
+.header__form 
+  margin-left: 37px
+
+
+.header__right 
+  display: flex !important
+  position: relative
+  align-items: center !important
+
+
+.logo 
+  color: #222222
+  font-size: 27px
+  font-weight: 300
+  text-transform: uppercase
+  letter-spacing: 0.68px
+  transition: transform 0.3s
+  transition-timing-function: cubic-bezier(0,.64,.11,.54)
+
+.logo__img
+  margin-right: 13px
+
+
+.logo span 
+  color: #f16d7f
+  font-weight: 400
+
+
+.logo:hover 
+  transform: scale(1.05)
+
+
+.logo:active 
+  transform: scale(1)
+
+
+.browse 
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 87px
+  height: 38px
+  border-radius: 3px 0 0 3px
+  border: 1px solid #e6e6e6
+  background-color: #F5F5F5
+  /*background-image: linear-gradient(to bottom, #f9f9f9 0%, #f5f5f5 100%)*/
+  color: #222222
+  font-size: 14px
+  font-weight: 300
+  letter-spacing: 0.35px
+  text-align: center
+  line-height: 14px
+  transition: all 0.3s
+  transition-timing-function: cubic-bezier(0,.64,.11,.54)
+
+
+.browse::after 
+  content: '\25BC'
+  padding-left: 0.5em
+  padding-top: 0.3em
+  font-size: 10px
+
+.browse:hover
+  background-color: #f16d7f
+  color: white
+
+.browse:active
+  background-color: #f16d7f
+  color: #f16d7f
+
+
+.header__form input
+  width: 280px
+  height: 40px
+  border-radius: 0 0 0 0
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  box-sizing: border-box
+  padding: 0 10px
+  color: #a4a4a4
+  font-size: 14px
+  font-weight: 300
+  line-height: 14px
+  letter-spacing: 0.35px
+  transition: 0.3s all
+
+
+.header__form input:focus
+  background-color: #F0FFF0
+  font-size: 14px
+  color: #696969
+
+.header__form button
+  width: 36px
+  height: 40px
+  border-radius: 0 3px 3px 0
+  border: 1px solid #e6e6e6
+  background-color: #ffffff
+  +transitOption(0.3s, background-color, cubic-bezier(0,.64,.11,.54))
+
+.header__form button:hover
+  background-color: #f16d7f
+
+.header__form button a
+  color: black
+  +transitOption(0.3s, color, cubic-bezier(0,.64,.11,.54))
+
+.header__form button:hover a
+  color: white
+
+.header__form button:active a
+  color: #f16d7f
+
+.header__cart
+  margin-right: 26px
+  +transitOption(0.3s, transform, cubic-bezier(0,.64,.11,.54))
+
+
+.header__cart:hover 
+  transform: scale(1.2)
+
+
+.header__cart:active 
+  transform: scale(1)
+
+
+.button 
+  display: block
+  width: 130px
+  height: 35px
+  background-color: #f16d7f
+  color: white
+  text-align: center
+  line-height: 2
+  box-shadow: 0 4px 10px 2px rgba(33, 33, 33, 0.35)
+  +transitOption(0.3s, box-shadow, cubic-bezier(0,.64,.11,.54))
+
+
+.button:hover 
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35)
+
+
+.button:active 
+  box-shadow: 0 0 0 0 rgba(33, 33, 33, 0.35)
+
+
+/*Меню*/
+.menu 
+  list-style-type: none
+  display: flex
+  justify-content: center
+
+
+.menu__link 
+  padding: 20px
+  display: block
+  color: #222222
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  text-decoration: none
+  transition: 0.2s all
+  transition-timing-function: cubic-bezier(0,.64,.11,.54)
+
+
+.menu__link:hover 
+  transform: scale(1.1)
+  color: #f16d7f
+
+
+.menu__link:active 
+  transform: scale(1)
+
+
+.currentPage__link 
+  padding: 20px
+  display: block
+  color: #f16d7f
+  font-size: 15px
+  font-weight: 700
+  line-height: 1.1
+  text-transform: uppercase
+  text-decoration: none
+
+
+/*Всплывающее меню*/
+.drop 
+  border-radius: 5px
+  background-color: #ffffff
+  padding: 12px 20px
+  border: 1px solid #ececec
+  display: none
+  position: absolute
+  top: 46px
+
+
+.drop::before 
+  content: ''
+  display: block
+  width: 10px
+  height: 10px
+  background-color: #fff
+  position: absolute
+  top: -6px
+  left: 28px
+  transform: rotate(45deg)
+  border-top: 1px solid #e8e8e8
+  border-left: 1px solid #e8e8e8
+
+
+
+.drop__h3 
+  color: #232323
+  font-size: 14px
+  font-weight: 400
+  text-transform: uppercase
+  letter-spacing: 0.35px
+  border-bottom: 1px solid #e8e8e8
+  padding-bottom: 8px
+  width: 235px
+  margin-bottom: 8px
+  margin-top: 8px
+
+
+.drop__ul 
+  list-style-type: none
+
+
+.drop__link 
+  color: #646464
+  font-size: 14px
+  font-weight: 400
+  line-height: 28px
+  letter-spacing: 0.35px
+  +transitOption(0.3, color, cubic-bezier(0,.64,.11,.54))
+
+
+.drop__link:hover 
+  color: #f16d7f
+
+.drop__link:active
+  color: lightgrey
+
+
+.drop__flex 
+  margin-right: 46px
+
+
+.drop__flex:last-child 
+  margin-right: 0
+
+
+.menu__list 
+  position: relative
+
+
+.menu__list:hover .drop
+  display: flex
+
+
+.drop_last 
+  left: auto
+  right: 0
+
+
+.drop_last::before 
+  left: auto
+  right: 35px
+
+/*Промо*/
+
+.promo 
+  background-color: #e8e8e8
+
+
+.promo-content 
+  height: 614px
+  background-image: url(../img/promo_back.jpg)
+  background-position: 0 -51px
+  display: flex
+  align-items: center
+
+
+.promo__text 
+  height: 100px
+  width: 500px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  border-left: 12px solid #f16d7f
+  padding-left: 0.3em
+
+
+.promo__h2 
+  display: block
+  font-size: 60px
+  height: 60px
+  font-weight: 700
+  letter-spacing: 1.5px
+  line-height: 0.75
+
+
+
+.promo__h3 
+  display: block
+  color: #222222
+  font-size: 40px
+  height: 40px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 1px
+
+.promo__text span 
+  color: #f16d7f
+  font-size: 40px
+  font-weight: 700
+  text-transform: uppercase
+
+/*ЦЕЛЕВЫЕ АУДИТОРИИ*/
+.targetAudience-content 
+  height: 823px
+  padding-top: 98px
+  display: flex
+  justify-content: space-between
+
+
+.prodBigBlock 
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  width: 560px
+
+
+.prodBigBlock a 
+  display: block
+
+
+#product_1 
+  display: flex
+  justify-content: flex-start
+  height: 542px
+  background-image: url(../img/Product_1.jpg)
+
+
+#product_2 
+  display: flex
+  justify-content: flex-start
+  height: 261px
+  background: url(../img/Product_2.jpg) 100% 50% no-repeat, url(../img/Product_2_BG.jpg)
+
+#product_3 
+  display: flex
+  justify-content: flex-start
+  height: 261px
+  background-image: url(../img/Product_3.jpg)
+
+
+#product_4 
+  display: flex
+  justify-content: flex-start
+  height: 542px
+  background-image: url(../img/Product_4.jpg)
+
+
+#product_1:hover, #product_2:hover, #product_3:hover, #product_4:hover 
+  outline: 1px solid darkgrey
+  opacity: 0.8
+  transition: 0.3s
+  transition-timing-function: cubic-bezier(0,.64,.11,.54)
+
+
+#product_1:active, #product_2:active, #product_3:active, #product_4:active 
+  outline: 1px solid #008B8B
+  opacity: 0.5
+
+
+
+.product_Text 
+  height: 50px
+  background: #FFFFFF
+  margin-top: 26px
+  padding: 16px 19px
+  border-left: 0.5px solid #DCDCDC
+
+
+.product_Text h2 
+  color: #222222
+  font-size: 18px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 0.45px
+
+
+.product_Text h3 
+  color: #f16d7f
+  font-size: 30px
+  font-weight: 700
+  letter-spacing: 0.75px
+
+
+/*ТОВАРЫ*/
+.feturedItems 
+  margin-top: 100px
+
+
+.feturedItemsTitle 
+  text-align: center
+  margin-bottom: 60px
+
+
+.feturedItems h2 
+  margin-bottom: 16px
+  color: #222222
+  height: 23px
+  font-size: 30px
+  font-weight: 700
+  letter-spacing: 0.75px
+
+.feturedItems p 
+  color: #9f9f9f
+  font-size: 14px
+  font-weight: 400
+  letter-spacing: 0.35px
+
+
+.productCards 
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+  align-content: space-between
+
+
+.card 
+  display: block
+  width: 252px
+  height: 353px
+  border-radius: 0 0 10px 10px
+  transition: 1s
+  transition-timing-function: cubic-bezier(0,.64,.11,.54)
+
+
+.picture 
+  width: 252px
+  height: 279px
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+
+
+.dimmer 
+  width: 252px
+  height: 279px
+  position: absolute
+  background: #000
+  visibility: hidden
+  +transitOption(1s, opacity, cubic-bezier(0,.64,.11,.54))
+
+
+.buttonAdd 
+  display: flex
+  justify-content: center
+  align-items: center
+  position: absolute
+  width: 123px
+  height: 39px
+  color: #FFFFFF
+  outline: 1px solid #FFFFFF
+  margin-bottom: 100px
+  visibility: hidden
+  +transitOption(0.3s, box-shadow, cubic-bezier(0,.64,.11,.54))
+
+
+.buttonAdd:hover 
+  box-shadow: 0 3px 5.5px 2px white
+  cursor: pointer
+
+
+.buttonAdd:active 
+  box-shadow: 0 0 0 0 white
+
+
+.buttonAdd img
+  width: 23px
+  height: 22px
+
+
+.card:hover
+  transform: scale(1.05)
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.17)
+
+
+.card:hover .dimmer 
+  visibility: visible
+  opacity: 0.7
+
+
+.card:hover .buttonAdd 
+  visibility: visible
+
+
+.nameAndPrice
+  display: flex
+  flex-direction: column
+  width: 252px
+  height: 83px
+
+
+.nameAndPrice h3 
+  color: #222222
+  font-size: 13px
+  font-weight: 400
+  margin: 19px 0 0 15px
+  text-transform: uppercase
+
+
+.nameAndPrice p 
+  color: #f16d7f
+  font-size: 16px
+  font-weight: 700
+  margin: 10px 0 0 14px
+  text-transform: uppercase
+
+
+.allProductsBottom 
+  margin: 70px auto 0
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 212px
+  height: 48px
+  background-color: #f16d7f
+  color: #ffffff
+  font-size: 16px
+  font-weight: 700
+  letter-spacing: 0.4px
+  box-shadow: 0 4px 10px 2px rgba(33, 33, 33, 0.35)
+  +transitOption(0.3s, box-shadow, cubic-bezier(0,.64,.11,.54))
+
+
+.allProductsBottom img 
+  margin-left: 8px
+
+
+.allProductsBottom:hover 
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35)
+
+
+.allProductsBottom:active 
+  box-shadow: 0 0 0 0 rgba(33, 33, 33, 0.35)
+
+/*OFFER*/
+.offer 
+  margin-top: 113px
+
+
+.offerContent 
+  display: flex
+  justify-content: space-between
+  width: 1140px
+  height: 529px
+  background: url(../img/2-layers.jpg) no-repeat, url(../img/Background.png)
+
+
+.offBigText 
+  width: 293px
+  height: 78px
+  margin: 130px 0 0 39px
+
+
+.offBigText h2
+  color: #ffffff
+  font-size: 32px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 0.9px
+
+
+.percent 
+  color: #ffffff
+  font-size: 54px
+  font-weight: 700
+  letter-spacing: 1.5px
+  text-transform: uppercase
+
+
+.wordOffer 
+  color: #f16d7f
+  font-size: 54px
+  font-weight: 700
+  letter-spacing: 1.5px
+  text-transform: uppercase
+
+
+.offSmallTextBlock 
+  margin: 48px 43px 0 0
+
+
+.offSmallText 
+  width: 294px
+  margin-bottom: 54px
+  display: flex
+  justify-content: space-between
+
+
+#sizeOffPict-1 
+  width: 45px
+  height: 32px
+
+
+#sizeOffPict-2 
+  width: 40px
+  height: 40px
+
+
+#sizeOffPict-3 
+  width: 47px
+  height: 35px
+
+
+.offSmallContent 
+  width: 219px
+
+
+.offSmallContent h2 
+  color: #fbfbfb
+  font-size: 20px
+  font-weight: 700
+  letter-spacing: 0.5px
+  margin-bottom: 12px
+
+
+.offSmallContent p 
+  color: #fbfbfb
+  font-size: 14px
+  font-weight: 300
+  letter-spacing: 0.35px
+  line-height: 24px
+
+/*FOOTER*/                                             /*ПОБЕРЕЖЬЕ*/
+
+.coast 
+  display: flex
+  margin: 97px auto 0
+  width: 1600px
+  height: 438px
+  background-image: url(../img/Rectangle_9_copy.png), url(../img/Layer_41.jpg)
+
+/*Левая сторона*/
+.quotes 
+  width: 799.5px
+
+
+.quotesContent-1 
+  display: flex
+  align-items: flex-start
+  width: 497px
+  margin: 111px 0 0 222px
+
+
+.quotesContent-2 
+  margin: 12px 0 0 28px
+
+
+.quote 
+  margin-bottom: 19px
+  color: #222224
+  font-size: 16px
+  font-style: italic
+  letter-spacing: 0.4px
+  line-height: 26px
+
+
+.quoteName-1 
+  color: #f16d7f
+  font-size: 16px
+  font-weight: 700
+  letter-spacing: 0.4px
+
+.quoteName-2 
+  color: #222224
+  font-size: 12px
+  font-weight: 500
+  letter-spacing: 0.3px
+  margin-bottom: 30px
+
+
+.quotesLinks 
+  width: 141px
+  display: flex
+  justify-content: space-between
+
+
+.quotesLinkBig 
+  display: flex
+  align-items: center
+  width: 47px
+  height: 20px
+
+
+.quotesLink, .currentLink 
+  width: 38px
+  height: 4px
+
+
+.quotesLink 
+  background-color: #d6d6d6
+  transition: 0.3s
+
+
+.quotesLinkBig:hover .quotesLink 
+  transform: scale(1, 2)
+  background-color: #f16d7f
+
+
+.quotesLinkBig:active .quotesLink 
+  transform: scale(0.8, 0.8)
+
+
+.currentLink 
+  background-color: #f16d7f
+
+
+
+/*Полоска по середине*/
+.strip 
+  width: 1px
+  background: white
+
+
+/*Правая сторона*/
+.subscribe 
+  width: 799.5px
+
+
+.subscribeText 
+  margin-top: 148px
+  margin-right: 220px
+  text-align: center
+  color: #222224
+  font-weight: 400
+  letter-spacing: 0.6px
+  text-transform: uppercase
+  
+.subscribeText h2 
+  font-size: 24px
+  margin-bottom: 5px
+
+
+.subscribeText p 
+  font-size: 14px
+
+
+.coastForm 
+  width: 386px
+  margin-left: 92px
+  display: flex
+  margin-top: 35px
+
+
+.coastForm input 
+  display: block
+  box-sizing: border-box
+  padding: 0 30px
+  width: 282px
+  height: 48px
+  border-radius: 23px 0 0 23px
+  border: 1px solid #e6e6e6
+  background-color: #e1e1e1
+  font-size: 15px
+
+
+.coastForm input:focus
+  background-color: #F0FFF0
+  font-size: 14px
+  color: #696969
+
+
+.buttonSubscribe 
+  display: block
+  width: 104px
+  height: 48px
+  border-radius: 0 23px 23px 0
+  background-color: #f16d7f
+  color: #ffffff
+  font-size: 14px
+  font-weight: 400
+  letter-spacing: 0.35px
+  text-align: center
+  line-height: 3.2
+  +transitOption(0.3s, box-shadow, cubic-bezier(0,.64,.11,.54))
+
+
+.buttonSubscribe:hover 
+  box-shadow: 0 2px 5px 1px rgba(33, 33, 33, 0.35)
+
+
+.buttonSubscribe:active 
+  box-shadow: 0 0 0 0 rgba(33, 33, 33, 0.35)
+
+
+/*ОГЛАВЛЕНИЕ (CONTENT)*/
+
+.content 
+  width: 1600px
+  height: 458px
+  margin: 0 auto
+
+
+.contentConteiner 
+  display: flex
+  justify-content: space-between
+  padding: 0 273px 89px 229px
+
+
+.footerLogo 
+  margin: 109px 0 29px
+
+
+.logoText p 
+  width: 427px
+  color: #898989
+  font-size: 14px
+  font-weight: 300
+  letter-spacing: 0.35px
+
+
+.foterListes 
+  display: flex
+  justify-content: space-between
+  width: 580px
+
+
+.contentConteiner h2 
+  margin: 123px 0 45px
+  color: #f16d7f
+  font-size: 18px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 0.45px
+
+
+.contentConteiner li 
+  list-style-type: none
+  text-decoration: none
+  margin-bottom: 9px
+  +transitOption(0.3s, transform, cubic-bezier(0,.64,.11,.54))
+
+
+.contentConteiner li a 
+  color: #898989
+  font-size: 16px
+  font-weight: 400
+  letter-spacing: 0.4px
+
+
+.contentConteiner li:hover 
+  transform: scale(1.05)
+
+
+.contentConteiner li:hover a 
+  color: #f16d7f
+
+
+.contentConteiner li:active a 
+  color: white
+
+
+
+
+/*ПОЛ (FLOOR)*/
+
+.floor 
+  height: 79px
+  background-color: #e6e6e6
+
+
+.floorContent 
+  height: inherit
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+
+.socialNetwork 
+  display: flex
+  justify-content: space-between
+  width: 192px
+
+
+.socNetIcon 
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 32px
+  height: 32px
+  color: #A9A9A9
+  background-color: #ffffff
+  transition: transform 2s
+
+
+
+.socNetIcon:hover 
+  background-color: #f16d7f
+  border-radius: 15px
+  /*transform: scale(1.2)*/
+  transform: rotate(360deg)
+
+
+.socNetIcon:hover i 
+  color: white
+
+
+.socNetIcon:active 
+  background-color: #e6e6e6
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Product*/
+
+                                           /*breadcrumb*/
+
+.breadcrumb 
+  height: 148px
+  background: #f8f3f4
+
+
+.breadcrumbContent 
+  height: inherit
+  display: flex
+  justify-content: space-between
+  align-items: center
+
+
+.breadcrumbContent h1 
+  color: #f16d7f
+  font-size: 24px
+  font-weight: 400
+  text-transform: uppercase
+
+
+.liBreadcrumb 
+  display: inline-block
+  list-style-type: none
+  text-decoration: none
+  font-size: 14px
+  text-transform: uppercase
+  color: #636363
+  font-weight: 300
+  +transitOption(0.3s, transform, cubic-bezier(0,.64,.11,.54))
+
+.liBreadcrumb a
+  +transitOption(0.3s, color, cubic-bezier(0,.64,.11,.54))
+
+
+.liBreadcrumb:hover 
+  transform: scale(1.05)
+
+
+.liBreadcrumb:hover a 
+  color: #f16d7f
+
+
+.liBreadcrumb:active 
+  transform: scale(1)
+
+
+.liBreadcrumb:active a 
+  color: black
+
+
+.actBreadcrumb 
+  display: inline-block
+  list-style-type: none
+  text-decoration: none
+  font-size: 14px
+  text-transform: uppercase
+  color: #f16d7f
+  font-weight: 700
+
+
+.liBreadcrumb a 
+  color: black
+
+/*singleProducts*/
+.singleProducts 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  height: 777px
+  width: 1600px
+  margin: 0 auto
+  border: 1px solid #eaeaea
+  background-color: #f7f7f7
+
+
+.sliderButtonSP-left, .sliderButtonSP-right
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 47px
+  height: 47px
+  background-color: #2a2a2a
+  +transitOption(0.3s, background, cubic-bezier(0,.64,.11,.54))
+
+
+.sliderButtonSP-left:hover, .sliderButtonSP-right:hover
+  background: #DCDCDC
+
+
+.sliderButtonSP-left:active, .sliderButtonSP-right:active
+  background: white
+
+
+.sliderButtonSP-left i, .sliderButtonSP-right i
+  display: block
+  color: white
+  font-size: 25px
+  transition: 0.5s
+
+
+.sliderButtonSP-left:hover i
+  color: black
+  transform: translate(-15px, 0)
+
+.sliderButtonSP-right:hover i
+  color: black
+  transform: translate(15px, 0)
+
+.sliderButtonSP-left:active i
+  color: #f16d7f
+
+.sliderButtonSP-right:active i
+  color: #f16d7f
+
+.singleProducts img
+  margin-bottom: 30px
+
+
+.infoCardSP-block 
+  position: relative
+  margin: 0 auto
+  width: 1140px
+  height: 730px
+
+
+.infoCardSP 
+  width: 1140px
+  height: 730px
+  border: 1px solid #eaeaea
+  background-color: #ffffff
+  position: absolute
+  bottom: 90px
+
+.infoCardSP h2 
+  margin-top: 73px
+  text-align: center
+  color: #f16d7f
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+
+
+.paginIC-SP-block 
+  margin: 14px auto
+  display: flex
+  align-items: center
+  width: 147px
+  height: 3px
+
+
+.paginIC-SP 
+  width: 49px
+  height: 1px
+  outline: 1px solid #eaeaea
+  background: #DCDCDC
+
+
+.actPaginIC-SP 
+  background: #f16d7f !important
+  height: 3px !important
+
+
+.infoCardSP h3 
+  color: #4d4d4d
+  font-size: 18px
+  font-weight: 400
+  text-transform: uppercase
+  margin-top: 17px
+  text-align: center
+
+
+.bigText 
+  width: 618px
+  margin: 67px auto 0
+  text-align: center
+  color: #5e5e5e
+  font-size: 14px
+  font-weight: 300
+
+
+.mater-desig 
+  margin: 26px auto 0
+  display: flex
+  justify-content: space-between
+  width: 334px
+  /*height: 10px*/
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+
+
+.mater 
+  display: flex
+  width: 132px
+  height: inherit
+
+
+.desig 
+  display: flex
+  width: 158px
+  height: inherit
+
+
+.grayText-SP 
+  color: #b9b9b9
+
+
+.blackText-SP 
+  color: #2f2f2f
+
+
+.price-SP 
+  margin-top: 33px
+  text-align: center
+  color: #ef5b70
+  font-size: 24px
+  font-weight: 700
+
+
+.line-SP 
+  margin: 39px auto 0
+  width: 618px
+  height: 1px
+  outline: 1px solid #eaeaea
+  background-color: #F5F5F5
+
+
+.chooseForm-SP 
+  display: flex
+  justify-content: space-between
+  width: 538px
+  height: 70px
+  margin: 59px auto 0
+
+
+.chooseForm-SP h4 
+  color: #2f2f2f
+  font-size: 14px
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 14px
+
+
+.selectParameter 
+  width: 144px
+  height: 35px
+  &:focus
+    background-color: #F0FFF0
+    font-size: 16px
+    color: #696969
+
+
+.quantityInp input 
+  box-sizing: border-box
+  padding: 0 10px
+  width: 144px
+  height: 35px
+  border: 1px solid #e6e6e6
+  color: #bcbcbc
+  font-size: 14px
+  font-weight: 400
+  &:focus
+    background-color: #F0FFF0
+    font-size: 14px
+    color: #696969
+
+
+.bigButton-SP 
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 538px
+  height: 55px
+  outline: 1px solid #ef5b70
+  background-color: #ffffff
+  color: #ef5b70
+  font-size: 16px
+  font-weight: 700
+  margin: 28px auto 0
+  box-shadow: $buttonShedow
+  +transitOption(0.3s, box-shadow, cubic-bezier(0,.64,.11,.54))
+
+
+.bigButton-SP:hover 
+  box-shadow: $buttonShedowHover
+
+
+.bigButton-SP:active 
+  box-shadow: $buttonShedowActive
+
+
+.bigButton-SP img 
+  width: 26px
+  height: 24px
+  margin: 0 10px 0
+
+
+/*May Like Also*/
+
+.mayLikeAlso 
+  margin-top: 29px
+
+
+.mayLikeAlso h2 
+  color: #4d4d4d
+  font-size: 24px
+  font-weight: 400
+  text-transform: uppercase
+  margin-bottom: 72px
+  text-align: center
+
+
+.productCards-MLA 
+  display: flex
+  justify-content: space-between
+  width: 1140px
+  margin: 0 auto
+
+
+.card-MLA 
+  width: 261px
+  height: 363px
+  border-radius: 0 0 10px 10px
+  +transitOption(0.3s, transform, cubic-bezier(0,.64,.11,.54))
+
+.card-MLA:hover
+  transform: scale(1.05)
+  
+
+.dimmer-MLA
+  width: 261px
+  height: 280px
+  position: absolute
+  background: #000
+  visibility: hidden
+  transition: 0.5s
+
+.card-MLA:hover .dimmer-MLA 
+  visibility: visible
+  opacity: 0.7
+
+
+.card-MLA:hover .buttonAdd 
+  visibility: visible
+
+
+.card-MLA:hover 
+  box-shadow: 4px 4px 10px 1px rgba(0, 0, 0, 0.17)
+  transition: 0.5s
+
+
+.picture-MLA 
+  width: 261px
+  height: 280px
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #e9e9e9
+
+
+.nameAndPrice-MLA 
+  display: flex
+  flex-direction: column
+  width: 263px
+  height: 83px
+
+
+.nameAndPrice-MLA h3 
+  color: #222222
+  font-size: 13px
+  font-weight: 400
+  margin: 19px 0 0 15px
+  text-transform: uppercase
+
+.nameAndPrice-MLA p 
+  color: #f16d7f
+  font-size: 16px
+  font-weight: 400
+  margin: 10px 0 0 14px
+  text-transform: uppercase
+
+
+@import "shopping-cart"
+
+@import "checkout"
+
+@import "product"
+
+
+
